@@ -1,0 +1,29 @@
+[package]
+name = "memrium-secrets"
+version = "0.1.0"
+description = "The Memrium secret service: org.freedesktop.secrets and a NetworkManager secret agent over one encrypted vault, plus a password prompt."
+license = "MIT"
+repository = "https://github.com/Supchik22/memrium-secrets"
+edition = "2021"
+
+[lib]
+name = "memrium_secrets"
+path = "src/lib.rs"
+
+[[bin]]
+name = "memrium_secrets"
+path = "src/main.rs"
+
+[[bin]]
+name = "memrium_askpass"
+path = "src/askpass/main.rs"
+
+[dependencies]
+chebrium = { git = "https://github.com/Supchik22/chebrium" }
+zbus = "5"
+argon2 = "0.5"
+chacha20poly1305 = "0.10"
+getrandom = "0.3"
+zeroize = "1"
+blocking = "1"
+futures-util = { version = "0.3", default-features = false }
